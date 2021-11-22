@@ -1,0 +1,3 @@
+Legajo	Nombre y Apellido	Fecha	Código de materia
+24	Rhonal Gonzalez	24/2/1995	3
+2	Pedro Picapiedra	15/2/2001	3

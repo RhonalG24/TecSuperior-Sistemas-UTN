@@ -1,0 +1,72 @@
+Archivos binarios
+
+    Leo un bloque de bites y tengo que interpretar de alguna forma
+    Tengo que determinar que son los primeros 4 bites, luego los siguientes 4 bites y Archivos
+
+    Tengo que saber con que estructura fue guardado para poder interpretarlo
+    TENGO QUE SABER DE ANTEMANO COMO LEERLO
+
+    Para abrir un archivo binario tengo que ponerle una b al final en el modo
+        FILE *pFile;
+        pFile = fopen("myfile.bin", "wb");
+
+
+    Para escribir
+        FILE *pFile;
+        char buffer[] = { 'x', 'y', 'z' };
+        pFile = fopen("myfile.bin", "wb");
+        
+        /*
+        fwrite(
+            <puntero a la posicion de memoria donde arrancan los bytes que quiero copiar>, 
+            <cuantos bytes quiero copiar, tamaño de lo que estoy copiando>, 
+            <cuantos alumnos quiero copiar>, 
+            <archivo a donde lo quiero copiar> );
+        */
+
+        copia de la RAM al disco
+
+        wfrite(buffer, sizeof(char), sizeof(buffer), pFile)
+
+        y se cierra el archivo
+        fclose(pFile);
+
+    Lectura
+        Necesito saber cuantos bytes tengo que leer, de donde vienen y a donde van
+
+        fread(<puntero al vector> <cuanto pesa> <cuantos datos quiero leer> <puntero al archivo que voy a leer>)
+        el size_t es lo que devuelve. Devuelve la cantidad de datos que leyo
+
+    Funcion feof() file end of file
+        Lo necesito para checkear que llegue hasta el final
+        SOLO PUEDO USAR EL feof() DESPUES DE HABER LEIDO
+
+        result = fread()
+        while(!feof(pFIle)){
+            //precesar los datos
+
+            result = fread()
+        }
+
+    Porque usar archivos binarios
+        Sabiendo lo que hay, me podre mover mejor y acceder a las distintas posiciones del archivos moviendome de a bytes usando fseek
+            fseek(<archivo> <cuanto debo desplazarme> <origen>)
+
+            origin: indica desde donde se realizará el desplazamiento. Para esto podemos utilizar
+            cualquiera de estas 3 constantes
+                ○ SEEK_SET: indica que el desplazamiento debe hacerse desde el principio del
+                archivo
+                ○ SEEK_CUR: indica que el desplazamiento debe hacerse desde la posición actual
+                del archivo
+                ○ SEEK_END: indica que el desplazamiento debe hacerse desde el final del archivo
+
+    Otra funcion util 
+        ftell()
+
+        me dice donde estoy parado en el archivo
+
+    IGNORAR FSETPOS, solo sirve cuando se usa FGETPOS
+
+
+
+*****TAREA HACER EJERCICIO 8 en adelante*****

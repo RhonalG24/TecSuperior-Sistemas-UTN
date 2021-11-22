@@ -1,0 +1,21 @@
+
+
+
+
+
+Colas
+
+    Tienen un frente y un fin
+
+        entran -> | | | | | -> salen
+
+    Fin siempre apunta al nuevo nodo
+
+    Frente apunta al primer valor
+
+Lista
+    Se puede mover a traves de la lista
+    Esto permite insertar o remover desde cualquier lado
+    Las lecturas no son destructivas
+    
+    Son nodos enlazados al igual que las pilas y Colas
